@@ -21,8 +21,12 @@ Ci-dessous, vous trouverez une liste des didacticiels suivant votre environnemen
 *  [Soumettre un job Python >](https://github.com/Taouey/Docs/tree/main/Python)
 *  [Soumettre un job R >](https://github.com/Taouey/Docs/tree/main/R)
 *  [Utilitaires sur Slurm > ](https://github.com/Taouey/Docs/tree/main/SLURM)  
+
 Pour plus d'informations, visiter notre site web officiel [www.cineri.sn](https://www.cineri.sn).
 
 Vous pouvez également nous contacter via le mail support : [support@cineri.sn](support@cineri.sn).
+
+
+
 
 ![image](https://github.com/Taouey/Docs/assets/167436550/a9082512-311a-4289-bddb-db78ac3052d6)
