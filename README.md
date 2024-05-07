@@ -20,6 +20,7 @@ Ci-dessous, vous trouverez une liste des didacticiels suivant votre environnemen
 *  [Soumettre un job OpenMP >](https://github.com/Taouey/Docs/tree/main/OPenMP)
 *  [Soumettre un job Python >](https://github.com/Taouey/Docs/tree/main/Python)
 *  [Soumettre un job R >](https://github.com/Taouey/Docs/tree/main/R)
+*  [Soumettre un job Scilab >](https://github.com/Taouey/Docs/tree/main/Scilab)
 *  [Utilitaires sur Slurm > ](https://github.com/Taouey/Docs/tree/main/SLURM)  
 
 Pour plus d'informations, visiter notre site web officiel [www.cineri.sn](https://www.cineri.sn).
