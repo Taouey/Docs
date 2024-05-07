@@ -17,6 +17,7 @@ Ci-dessous, vous trouverez une liste des didacticiels suivant votre environnemen
 *  [Soumettre un job Matlab >](https://github.com/Taouey/Docs/tree/main/Matlab)
 *  [Soumettre un job NetCDF >](https://github.com/Taouey/Docs/tree/main/NetCDF)
 *  [Soumettre un job OpenBLAS >](https://github.com/Taouey/Docs/tree/main/OpenBLAS)
+*  [Soumettre un job OpenCL >](https://github.com/Taouey/Docs/tree/main/OpenCL)
 *  [Soumettre un job OpenMP >](https://github.com/Taouey/Docs/tree/main/OPenMP)
 *  [Soumettre un job Python >](https://github.com/Taouey/Docs/tree/main/Python)
 *  [Soumettre un job R >](https://github.com/Taouey/Docs/tree/main/R)
