@@ -17,7 +17,7 @@ Ci-dessous, vous trouverez une liste des didacticiels suivant votre environnemen
 *  [Soumettre un job HDF5 >](https://github.com/Taouey/Docs/blob/main/HDF5/readme.md)
 *  [Soumettre un job MPI >](https://github.com/Taouey/Docs/tree/main/MPI)
 *  [Soumettre un job Matlab >](https://github.com/Taouey/Docs/tree/main/Matlab)
-*    [Soumettre un job Marhematica >](https://github.com/Taouey/Docs/tree/main/Mathematica)
+*    [Soumettre un job Mathematica >](https://github.com/Taouey/Docs/tree/main/Mathematica)
 *  [Soumettre un job NetCDF >](https://github.com/Taouey/Docs/tree/main/NetCDF)
 *  [Soumettre un job OpenBLAS >](https://github.com/Taouey/Docs/tree/main/OpenBLAS)
 *  [Soumettre un job OpenCL >](https://github.com/Taouey/Docs/tree/main/OpenCL)
