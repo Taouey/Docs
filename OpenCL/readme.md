@@ -30,11 +30,11 @@ int main(int argc, char** argv)
     cl_int errNum;
     // Create an OpenCL context on first available platform
     context = CreateContext();
-    if (context == NULL)
-    { cerr << "Failed to create OpenCL context." << endl;
-return 1; }
-// Create a command-queue on the first device available
-// on the created context
+if (context == NULL)
+{ cerr << "Failed to create OpenCL context." << endl;
+  return 1;
+}
+// Create a command-queue on the first device available on the created context
 commandQueue = CreateCommandQueue(context, &device);
 if (commandQueue == NULL)
 {
@@ -77,45 +77,40 @@ if (!CreateMemObjects(context, memObjects, a, b))
                              &memObjects[1]);
     errNum |= clSetKernelArg(kernel, 2, sizeof(cl_mem),
                              &memObjects[2]);
-    if (errNum != CL_SUCCESS)
-    {
-        cerr << "Error setting kernel arguments." << endl;
-        Cleanup(context, commandQueue, program, kernel, memObjects);
-        return 1;
+if (errNum != CL_SUCCESS)
+{
+  cerr << "Error setting kernel arguments." << endl;
+  Cleanup(context, commandQueue, program, kernel, memObjects);
+  return 1;
 }
-    size_t globalWorkSize[1] = { ARRAY_SIZE };
-    size_t localWorkSize[1] = { 1 };
-    // Queue the kernel up for execution across the array
-    errNum = clEnqueueNDRangeKernel(commandQueue, kernel, 1, NULL,
-                                    globalWorkSize, localWorkSize,
-                                    0, NULL, NULL);
-    if (errNum != CL_SUCCESS)
-    {
-        cerr << "Error queuing kernel for execution." << endl;
-        Cleanup(context, commandQueue, program, kernel, memObjects);
-        return 1;
+size_t globalWorkSize[1] = { ARRAY_SIZE };
+size_t localWorkSize[1] = { 1 };
+// Queue the kernel up for execution across the array
+errNum = clEnqueueNDRangeKernel(commandQueue, kernel, 1, NULL, globalWorkSize, localWorkSize, 0, NULL, NULL);
+if (errNum != CL_SUCCESS)
+{
+  cerr << "Error queuing kernel for execution." << endl;
+  Cleanup(context, commandQueue, program, kernel, memObjects);
+  return 1;
 }
-    // Read the output buffer back to the Host
-    errNum = clEnqueueReadBuffer(commandQueue, memObjects[2],
-                            CL_TRUE, 0, ARRAY_SIZE * sizeof(float),
-                            result, 0, NULL, NULL);
-    if (errNum != CL_SUCCESS)
-    {
-        cerr << "Error reading result buffer." << endl;
-        Cleanup(context, commandQueue, program, kernel, memObjects);
-        return 1;
+// Read the output buffer back to the Host
+errNum = clEnqueueReadBuffer(commandQueue, memObjects[2], CL_TRUE, 0, ARRAY_SIZE * sizeof(float), result, 0, NULL, NULL);
+if (errNum != CL_SUCCESS)
+{
+  cerr << "Error reading result buffer." << endl;
+  Cleanup(context, commandQueue, program, kernel, memObjects);
+  return 1;
 }
-    // Output the result buffer
-    for (int i = 0; i < ARRAY_SIZE; i++)
-    {
-        cout << result[i] << " ";
-    }
-    cout << endl;
-    cout << "Executed program successfully." << endl;
-    Cleanup(context, commandQueue, program, kernel, memObjects);
+// Output the result buffer
+for (int i = 0; i < ARRAY_SIZE; i++)
+{  cout << result[i] << " "; }
+cout << endl;
+cout << "Executed program successfully." << endl;
+Cleanup(context, commandQueue, program, kernel, memObjects);
 return 0;
 }
 ```
+**Auteur : "OpenCL Programming Guide", Aaftab Munshi Benedict R. Gaster Timothy G. Mattson James Fung, and Dan Ginsburg, 2012.** 
 Sauvegardez ce code dans un fichier nommé **test_OpenCL.c**.
 
 ## Écriture du script SLURM 
