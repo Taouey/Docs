@@ -11,7 +11,8 @@ Vous trouverez les éléments ci-dessous :
 Ci-dessous, vous trouverez une liste des didacticiels suivant votre environnement de programmation :
 * [Soumettre un job C >](https://github.com/Taouey/Docs/tree/main/C)
 * [Soumettre un job Cuda >](https://github.com/Taouey/Docs/tree/main/Cuda)
-*  [Soumettre un job Fortran >](https://github.com/Taouey/Docs/tree/main/Fortran)
+* [Soumettre un job Erlang >](https://github.com/Taouey/Docs/tree/main/Erlang)
+* [Soumettre un job Fortran >](https://github.com/Taouey/Docs/tree/main/Fortran)
 *  [Soumettre un job HDF5 >](https://github.com/Taouey/Docs/blob/main/HDF5/readme.md)
 *  [Soumettre un job MPI >](https://github.com/Taouey/Docs/tree/main/MPI)
 *  [Soumettre un job Matlab >](https://github.com/Taouey/Docs/tree/main/Matlab)
