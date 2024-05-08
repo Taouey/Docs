@@ -13,4 +13,4 @@ Ce git présente les ressources de cours nécessaires à la connaissance génér
 Les aspects théoriques des systèmes et applications distribués y sont détaillés en profondeur.  
 Lien : http://www.ousmanethiare.com/images/cours/sd1.pdf  
 ## Auteur et copyright
-Pr. ousmane Thiaré, Université Gaston Berger de Saint-Louis.
+Pr. Ousmane Thiaré, Université Gaston Berger de Saint-Louis.
