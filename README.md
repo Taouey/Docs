@@ -24,6 +24,7 @@ Ci-dessous, vous trouverez une liste des didacticiels suivant votre environnemen
 *  [Soumettre un job OpenMP >](https://github.com/Taouey/Docs/tree/main/OPenMP)
 *  [Soumettre un job Python >](https://github.com/Taouey/Docs/tree/main/Python)
 *  [Soumettre un job R >](https://github.com/Taouey/Docs/tree/main/R)
+*  [Soumettre un job Scala >](https://github.com/Taouey/Docs/tree/main/Scala) 
 *  [Soumettre un job Scilab >](https://github.com/Taouey/Docs/tree/main/Scilab)
 *  [Utilitaires sur Slurm > ](https://github.com/Taouey/Docs/tree/main/SLURM)  
 
