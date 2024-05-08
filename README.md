@@ -31,8 +31,7 @@ Ci-dessous, vous trouverez une liste des didacticiels suivant votre environnemen
 Pour plus d'informations, visiter notre site web officiel [www.cineri.sn](https://www.cineri.sn).
 Vous pouvez également nous contacter via le [mail support](support@cineri.sn).
 
-![image](https://github.com/Taouey/Docs/assets/167436550/c0b6a1c2-6adf-487e-a9d1-3463049dd0b7)
-
+![image](https://github.com/Taouey/Docs/assets/167436550/f760b4cd-38cc-44ad-be47-62356b325a00)
 
 # Documentation et théories de calcul
 La documentation peut s'avérer être une étapê importante lorqu'il s'agit d'explorer des domaines connexes tels que le HPC. Dans cette foulée, nous proposons au lecteur désireux de pousser ses connaissances dans le domaine,  une série de cours théoriques, permettant d'appréhender les principes de base.  
