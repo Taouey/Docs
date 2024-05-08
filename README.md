@@ -29,10 +29,8 @@ Ci-dessous, vous trouverez une liste des didacticiels suivant votre environnemen
 *  [Utilitaires sur Slurm > ](https://github.com/Taouey/Docs/tree/main/SLURM)  
 
 Pour plus d'informations, visiter notre site web officiel [www.cineri.sn](https://www.cineri.sn).
-
 Vous pouvez également nous contacter via le mail support : [support@cineri.sn](support@cineri.sn).
-
-
-
-
 ![image](https://github.com/Taouey/Docs/assets/167436550/a9082512-311a-4289-bddb-db78ac3052d6)
+
+
+Pour une documentation approfondie des concepts de calcul théoriques relatifs aux Systèmes distribués, se référer à ce git : [Principes de base des SDs](https://github.com/Taouey/Docs/tree/main/Syst%C3%A8mes%20distribu%C3%A9s)
