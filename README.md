@@ -33,6 +33,6 @@ Vous pouvez également nous contacter via le mail support : [support@cineri.sn](
 ![image](https://github.com/Taouey/Docs/assets/167436550/a9082512-311a-4289-bddb-db78ac3052d6)
 
 # Documentation et théories de calcul
-La documentation peut s'avérer être une étapê importante lorqu'il s'agit d'explorer des domaines connexes tels que le HPC. Dans cette foulée, nous proposons au lecteur désireux de pousser ses connaissances dans le domaine une série de cours théoriques, déployés par des spécialstes du domaine, et pouvant permettre au lecteur d'appréhender les principes de base.  
+La documentation peut s'avérer être une étapê importante lorqu'il s'agit d'explorer des domaines connexes tels que le HPC. Dans cette foulée, nous proposons au lecteur désireux de pousser ses connaissances dans le domaine,  une série de cours théoriques, permettant d'appréhender les principes de base.  
 * [Concepts théoriques des Systèmes distribués](https://github.com/Taouey/Docs/tree/main/Syst%C3%A8mes%20distribu%C3%A9s)  
 * [Programmation parallèle](https://github.com/DiopBabacarEdu/HPC) 
