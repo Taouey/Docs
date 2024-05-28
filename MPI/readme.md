@@ -39,19 +39,17 @@ Le script Slurm ci-dessous peut être utilisé pour des travaux série :
 
 ```C
 #!/bin/bash
-#SBATCH --job-name=hello        # Donner un nom à votre job
-#SBATCH --nodes=1                # ID du noeud
-#SBATCH --ntasks=1               # Allouer le nombre total de tâches
-#SBATCH --cpus-per-task=1        # Cpu-cores par tâche (supérieur à 1 si multi-threading)
-#SBATCH --mem-per-cpu=4G         # Mémoire allouée par cpu-core 
-#SBATCH --time=00:01:00          # Limite de temps d'exéctution (HH:MM:SS)
-#SBATCH --mail-type=all          # Notifications en cas de démarrage, d'arrêt et d'erreur
+#SBATCH --job-name=hello            # Donner un nom à votre job
+#SBATCH --nodes=5                   # Nombre de noeuds alloués
+#SBATCH --ntasks=10                 # Nombre total de tâches
+#SBATCH --time=00:05:00             # Limite de temps d'exéctution (HH:MM:SS)
+#SBATCH --output=hello_output.txt   # Nom du fichier de sortie
 
 module purge
-module load mpi/openmpi/3.1.6/gcc-4.8.5
+module load mpi/openmpi/4.1.6/gcc-13.1.0
 
 mpicc hello.c -o hello
-mpirun -np 4 ./hello_world
+mpirun -np 4 ./hello
 ```
 
 Pour exécuter le script MPI, soumettez simplement le travail à SLURM avec la commande suivante :
@@ -138,15 +136,12 @@ Voici le script SLURM ci-dessous pour soumettre cette tâche :
 ```C
 #!/bin/bash
 #SBATCH --job-name=mpi_job       # Donner un nom à votre job
-#SBATCH --nodes=1                # ID du noeud
-#SBATCH --ntasks=1               # Allouer le nombre total de tâches
-#SBATCH --cpus-per-task=4        # Cpu-cores par tâche (supérieur à 1 car multi-threading)
-#SBATCH --mem-per-cpu=4G         # Mémoire allouée par cpu-core 
-#SBATCH --time=00:00:30          # Limite de temps d'exéctution (HH:MM:SS)
+#SBATCH --nodes=5                # ID du noeud
+#SBATCH --ntasks=10              # Allouer le nombre total de tâches
 #SBATCH --mail-type=all          # Notifications en cas de démarrage, d'arrêt et d'erreur
 
 module purge
-module load mpi/openmpi/3.1.6/gcc-4.8.5
+module load mpi/openmpi/4.1.6/gcc-13.1.0
 
 mpicc parallele_mpi.c -o parallele_mpi
 mpirun -np 10 ./parallele_mpi
