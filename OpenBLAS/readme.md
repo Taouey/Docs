@@ -66,6 +66,7 @@ module load OpenBLAS/0.3.26/gcc-13.1.0
 
 # Exécution du script OpenBLAS
 gcc -o matrices matrices.c -lopenblas
+./matrices
 ```
 
 Pour exécuter le code OpenBLAS, soumettez simplement le travail à SLURM avec la commande suivante :
