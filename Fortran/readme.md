@@ -27,11 +27,9 @@ Maintenant, vous devez créer un script SLURM **hello.sh** pour soumettre votre 
 
 ``` FORTRAN
 #!/bin/bash
-#SBATCH -J nom                    # Nom de la tâche
-#SBATCH -p SKL                    # Partition a utiliser
+#SBATCH -J jobFortran             # Nom de la tâche
 #SBATCH -N 5                      # Nombre de noeuds a utiliser
 #SBATCH -t 00:05:00               # Durée maximale de la tâche
-#SBATCH --exclusive               # Accès exclusif aux noeuds
 #SBATCH --ntasks=40               # Nombre total de tâhe a exécuter
 #SBATCH --output=Res_fort.txt	   # Fichier de sortie
 
