@@ -38,8 +38,8 @@ Le script Slurm ci-dessous peut être utilisé pour soumettre un job OpenMP :
 #SBATCH --ntasks=40              # Allouer un nombre total de tâches inférieur ou égal au nombre de coeurs (40) de chaque noeuod
 #SBATCH --time=00:01:00          # Limite de temps d'exéctution (HH:MM:SS)
 #SBATCH --exclusive              # Attibution exclusive de la toralité des noeuds 
-#SBATCH --output=output.txt
-#SBATCH --err=error.txt
+#SBATCH --output=output.txt      # Fichier de sortie
+#SBATCH --err=error.txt          # Fichier des logs
 
 # Chargement du module GCC
 module purge
@@ -116,8 +116,8 @@ Voici le script SLURM ci-dessous pour soumettre cette tâche :
 #SBATCH --ntasks=40              # Allouer un nombre total de tâches inférieur ou égal au nombre de coeurs (40) de chaque noeuod
 #SBATCH --time=00:01:00          # Limite de temps d'exéctution (HH:MM:SS)
 #SBATCH --exclusive              # Attibution exclusive de la toralité des noeuds 
-#SBATCH --output=output.txt
-#SBATCH --err=error.txt
+#SBATCH --output=output.txt      # Fichier de sortie
+#SBATCH --err=error.txt          # Fichier des logs
 
 # Chargement du module GCC
 module purge
