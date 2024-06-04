@@ -35,11 +35,11 @@ Le script Slurm ci-dessous peut être utilisé pour soumettre un job OpenMP :
 #!/bin/bash
 #SBATCH --job-name=hello_world_  # Donner un nom à votre job
 #SBATCH --nodes=1                # ID du noeud
-#SBATCH --ntasks=1               # Allouer le nombre total de tâches
-#SBATCH --cpus-per-task=1        # Cpu-cores par tâche 
-#SBATCH --mem-per-cpu=4G         # Mémoire allouée par cpu-core 
+#SBATCH --ntasks=40              # Allouer le nombre total de tâches
 #SBATCH --time=00:01:00          # Limite de temps d'exéctution (HH:MM:SS)
-#SBATCH --mail-type=all          # Notifications en cas de démarrage, d'arrêt et d'erreur
+#SBATCH --exclusive              # Attibution exclusive de la toralité des noeuds 
+#SBATCH --output=output.txt
+#SBATCH --err=error.txt
 
 # Chargement du module GCC
 module purge
