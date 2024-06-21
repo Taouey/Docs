@@ -1,13 +1,12 @@
 # HPC - Didacticiel d'utilisation de OpenMP sur Taouey
-* ```OpenMP``` est une API pour la programmation parallèle sur architectures à mémoire partagée
-* Souvent utilisée pour accélérer les calculs sur des systèmes multi-cœurs.
+**OpenMP** est une API pour la programmation parallèle sur architectures à mémoire partagée, souvent utilisée pour accélérer les calculs sur des systèmes multi-cœurs.
 
 ## OpenMP ou MPI ?
 L'utilisation de plusieurs coeurs de CPU implique la présence d'une mémoire partagée entre les différents coeurs de CPU.
 
-Une communication entre processus au sein d'une mémoire partagée est généralement moins couteuse qu'une communication entre deux noeuds interconnectés par un réseau de communication, comme c'est le cas avec l'utilisation de MPI.
+Une communication entre processus au sein d'une mémoire partagée est généralement moins couteuse qu'une communication entre deux noeuds interconnectés par un réseau de communication, comme c'est le cas avec l'utilisation de **MPI**.
 
-```OpenMP``` est donc adapté aux problèmes n'ayant nullement pas besoin de mobiliser plusieurs noeuds, mais plutôt un seul noeud de calcul, à l'intérieur duquel, les processus coeurs s'échangeraient des données, tirant ainsi partie d'un certain parallélisme intra-node.
+**OpenMP** est donc adapté aux problèmes n'ayant nullement pas besoin de mobiliser plusieurs noeuds, mais plutôt un seul noeud de calcul, à l'intérieur duquel, les processus coeurs s'échangent des données via la mémoire partagée, tirant ainsi partie d'un certain parallélisme intra-node.
 
 
 ## Soumission de tâches OpenMP via SLURM
@@ -19,7 +18,9 @@ Afin de soumettre des tâches ```OpenMP``` à SLURM, nous aurons besoin de deux 
 Dans cet exemple, nous utilisons ```OpenMP``` avec la version **gcc-13.1.0**.
 
 ## Exécution d'une tâche avec OpenMP
-Un job OpenMP est une tâche qui peut nécessiter un ou plusieurs cœurs de CPU. Voici un exemple basique d'un programme ```OpenMP``` (hello_world.c) qui permet à chaque processus d'afficher son rang :
+Un job **OpenMP** est une tâche qui peut nécessiter un ou plusieurs cœurs de CPU. 
+
+Voici un exemple basique d'un programme **OpenMP** (hello_world.c) qui permet à chaque processus d'afficher son rang :
 
 ```C
 #include <stdio.h>
@@ -39,7 +40,7 @@ int main() {
     return 0;
 }
 ```
-Le script Slurm ci-dessous peut être utilisé pour soumettre le job ```OpenMP``` décrit dans le programme précédent :
+Le script Slurm ci-dessous peut être utilisé pour soumettre le job **OpenMP** décrit dans le programme précédent :
 
 ```C
 #!/bin/bash
@@ -91,11 +92,11 @@ module load gcc/12.1.0/gcc-12.1.0
 
 ## Parallélisation d'un job OpenMP 
 
-Afin de paralléliser un job ```OpenMP```, il est judicieux de procéder à une subdivision de la tâche globale en plusieurs sous-tâches,
+Afin de paralléliser un job **OpenMP**, il est judicieux de procéder à une subdivision de la tâche globale en plusieurs sous-tâches,
 lesquelles peuvent être exécutées en parallèle sur plusieurs processeurs. 
 
 
-Voici un exemple simple de code parallèle en ```C``` utilisant ```OpenMP``` pour calculer la somme des éléments d'un tableau :
+Voici un exemple simple de code parallèle en ```C``` utilisant **OpenMP** pour calculer la somme des éléments d'un tableau :
 ```
 #include <stdio.h>
 #include <omp.h>
