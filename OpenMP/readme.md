@@ -1,15 +1,25 @@
 # HPC - Didacticiel d'utilisation de OpenMP sur Taouey
-* OpenMP est une API pour la programmation parallèle sur architectures à mémoire partagée
-* Souvent utilisée pour accélérer les calculs sur des systèmes multi-cœurs. 
+* ```OpenMP``` est une API pour la programmation parallèle sur architectures à mémoire partagée
+* Souvent utilisée pour accélérer les calculs sur des systèmes multi-cœurs.
+
+## OpenMP ou MPI ?
+L'utilisation de plusieurs coeurs de CPU implique la présence d'une mémoire partagée entre les différents coeurs de CPU.
+
+Une communication entre processus au sein d'une mémoire partagée est généralement moins couteuse qu'une communication entre deux noeuds interconnectés par un réseau de communication, comme c'est le cas avec l'utilisation de MPI.
+
+```OpenMP``` est donc adapté aux problèmes n'ayant nullement pas besoin de mobiliser plusieurs noeuds, mais plutôt un seul noeud de calcul, à l'intérieur duquel, les processus coeurs s'échangeraient des données, tirant ainsi partie d'un certain parallélisme intra-node.
+
+
 ## Soumission de tâches OpenMP via SLURM
 
-Afin de soumettre des tâches OpenMP à SLURM, nous aurons besoin de deux code sources : 
-* (1) un **script OpenMP** écrit dans le langage de votre choix qui décrit la solution à votre problème et,
+Afin de soumettre des tâches ```OpenMP``` à SLURM, nous aurons besoin de deux code sources : 
+* (1) un **programme OpenMP** écrit dans le langage de votre choix qui décrit la solution à votre problème et,
 * (2) un **script SLURM** qui spécifie les ressources nécessaires, définit l'environnement et les commandes à exécuter.
-Dans cet exemple, nous utilisons OpenMP avec la version **gcc-13.1.0**.
+
+Dans cet exemple, nous utilisons ```OpenMP``` avec la version **gcc-13.1.0**.
 
 ## Exécution d'une tâche avec OpenMP
-Un job OpenMP est une tâche qui peut nécessiter un ou plusieurs cœurs de CPU. Voici un exemple de script OpenMP (hello_world.c) :
+Un job OpenMP est une tâche qui peut nécessiter un ou plusieurs cœurs de CPU. Voici un exemple basique d'un programme ```OpenMP``` (hello_world.c) qui permet à chaque processus d'afficher son rang :
 
 ```C
 #include <stdio.h>
@@ -29,15 +39,15 @@ int main() {
     return 0;
 }
 ```
-Le script Slurm ci-dessous peut être utilisé pour soumettre un job OpenMP :
+Le script Slurm ci-dessous peut être utilisé pour soumettre le job ```OpenMP``` décrit dans le programme précédent :
 
 ```C
 #!/bin/bash
-#SBATCH --job-name=hello_world_  # Donner un nom à votre job
-#SBATCH --nodes=1                #Allouer un nombre de noeuds
+#SBATCH --job-name=hello_worldOP # Nom du job
+#SBATCH --nodes=1                # Toujours allouer un seul noeud avec OpenMP
 #SBATCH --ntasks=40              # Allouer un nombre total de tâches inférieur ou égal au nombre de coeurs (40) de chaque noeuod
 #SBATCH --time=00:01:00          # Limite de temps d'exéctution (HH:MM:SS)
-#SBATCH --exclusive              # Attibution exclusive de la toralité des noeuds 
+#SBATCH --exclusive              # Attibution exclusive de la totalité des noeuds 
 #SBATCH --output=output.txt      # Fichier de sortie
 #SBATCH --err=error.txt          # Fichier des logs
 
@@ -63,7 +73,7 @@ Voici la commande pour afficher le statut d'une tâche :
 squeue -u $USER
 ```
 ## Gérer les versions gcc aux travers des modules
-Nous avons utilisé dans notre exemple la version 13.1.0 de gcc. Cependant, au cas où il serait nécessaire de se calquer sur d'autres versions, 
+Nous avons utilisé dans notre exemple la version ```13.1.0``` de ```gcc```. Cependant, au cas où il serait nécessaire de se calquer sur d'autres versions, 
 taper la commande qui permet de lister les autres versions disponibles.
 
 ```
@@ -81,11 +91,11 @@ module load gcc/12.1.0/gcc-12.1.0
 
 ## Parallélisation d'un job OpenMP 
 
-Afin de paralléliser un job OpenMP, il est judicieux de procéder à une subdivision de la tâche globale en plusieurs sous-tâches,
+Afin de paralléliser un job ```OpenMP```, il est judicieux de procéder à une subdivision de la tâche globale en plusieurs sous-tâches,
 lesquelles peuvent être exécutées en parallèle sur plusieurs processeurs. 
 
 
-Voici un exemple simple de code parallèle en C utilisant OpenMP pour calculer la somme des éléments d'un tableau :
+Voici un exemple simple de code parallèle en ```C``` utilisant ```OpenMP``` pour calculer la somme des éléments d'un tableau :
 ```
 #include <stdio.h>
 #include <omp.h>
@@ -111,8 +121,8 @@ int main() {
 Voici le script SLURM ci-dessous pour soumettre cette tâche :
 ```C
 #!/bin/bash
-#SBATCH --job-name=open_mp_job   # Donner un nom à votre job
-#SBATCH --nodes=1                #Allouer un nombre de noeuds
+#SBATCH --job-name=open_mp_job   # Nom du job
+#SBATCH --nodes=1                # Toujours allouer un seul noeud avec OpenMP
 #SBATCH --ntasks=40              # Allouer un nombre total de tâches inférieur ou égal au nombre de coeurs (40) de chaque noeuod
 #SBATCH --time=00:01:00          # Limite de temps d'exéctution (HH:MM:SS)
 #SBATCH --exclusive              # Attibution exclusive de la toralité des noeuds 
